@@ -1,0 +1,42 @@
+.list-header {
+  padding: 100px 300px 25px 300px;
+  .page-header {
+    font-size: 40px;
+    color: #5e56e7;
+    font-family: Montserrat-Medium;
+  }
+  span.oi.oi-magnifying-glass {
+    margin: 10px;
+    @media only screen and (max-width: 360px) {
+      margin: 0px;
+    }
+  }
+  @media only screen and (max-width: 360px) {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+  }
+}
+.list-content {
+  background-color: #f8f9fa;
+  padding: 50px 300px 50px 300px;
+  @media only screen and (max-width: 360px) {
+    width: max-content;
+    padding: 0px;
+  }
+}
+
+.card {
+  width: 180px;
+  background-color: #f8f9fa;
+  border: 1px !important;
+}
+img.card-img-top {
+  border-radius: 1rem;
+  height: 200px;
+}
+nav.navbar.navbar-light.bg-light {
+  @media only screen and (max-width: 360px) {
+    width: 480px;
+  }
+}

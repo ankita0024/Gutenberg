@@ -1,0 +1,73 @@
+<div class="list-header">
+  <h1 class="page-header">
+    <i class="fa fa-arrow-left" aria-hidden="true" (click)="goBack()"></i
+    >{{ genreName }}
+  </h1>
+
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <span class="oi oi-magnifying-glass"></span>
+      <input
+        [(ngModel)]="searchText"
+        class="form-control form-control-sm ml-3 w-75"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+        (keyup)="search()"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </form>
+  </nav>
+</div>
+<div class="list-content">
+  <div
+    class="search-results"
+    data-infinite-scroll
+    debounce
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()"
+  >
+    <div class="row">
+      <div class="col-md-2" *ngFor="let list of lists">
+        <div class="card" (click)="viewDetails(list, popupModal)">
+          <img
+            class="card-img-top"
+            [src]="
+              (list?.formats &&
+                (list?.formats)['image/jpeg'] &&
+                (list?.formats)['image/jpeg'] !== null) ||
+              (list?.formats)['image/jpeg'] !== undefined
+                ? list.formats['image/jpeg']
+                : 'assets/img/images.jpg'
+            "
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ list?.title }}</h5>
+            <p class="card-text">
+              {{ (list?.authors)[0]?.name }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #popupModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Alert!!</h5>
+    <button
+      type="button"
+      class="close"
+      data-dismiss="modal"
+      aria-label="Close"
+      (click)="modal.close()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    No Viewable version available.
+  </div>
+</ng-template>

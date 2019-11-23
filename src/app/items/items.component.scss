@@ -1,0 +1,57 @@
+.main-header {
+  @media only screen and (max-width: 360px) {
+    width: fit-content;
+    height: fit-content;
+  }
+}
+.main-page-header {
+  background-size: contain;
+  background: url("../../assets/img/Pattern.svg") repeat;
+  font-family: Montserrat-SemiBold;
+  height: 40%;
+  text-align: left;
+  padding: 100px;
+  h1 {
+    font-size: 3.5em;
+    color: #5e56e7;
+  }
+  @media only screen and (max-width: 360px) {
+    width: fit-content;
+    height: fit-content;
+  }
+}
+
+.items-list {
+  background-color: #f5f4ff;
+  height: 60%;
+  @media only screen and (max-width: 360px) {
+    width: fit-content;
+    height: fit-content;
+  }
+}
+li.list-group-item {
+  width: 450px;
+  height: 60px;
+  padding: 10px;
+  margin: 20px;
+  svg {
+    height: 2.5em;
+    width: 2.5em;
+  }
+  span {
+    font-family: Montserrat-Medium;
+    font-size: 20px;
+  }
+}
+ul {
+  @media only screen and (max-width: 360px) {
+    width: fit-content;
+    height: fit-content;
+  }
+}
+ul.list-group {
+  padding-left: 550px;
+  @media only screen and (max-width: 360px) {
+    padding-left: 20px;
+  }
+}
